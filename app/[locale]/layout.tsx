@@ -10,7 +10,8 @@ import {
   APP_VERSION,
   APP_BASE_URL,
 } from "@/lib/constants";
-import { ThemeProvider } from "next-themes";
+// import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],

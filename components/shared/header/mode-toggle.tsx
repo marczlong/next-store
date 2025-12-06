@@ -15,8 +15,9 @@ const ModeToggle = () => {
 
     if (!mounted) {
         return (
-            <Button variant="ghost" size="icon" className="h-9 w-9">
-                <SunIcon className="h-4 w-4" />
+            <Button variant="ghost" className="flex items-center gap-2 h-9 px-3">
+                {/* <SunIcon className="h-4 w-4" />
+                <span className="text-sm">Theme</span> */}
             </Button>
         )
     }
@@ -24,11 +25,17 @@ const ModeToggle = () => {
     return (
         <Button 
             variant="ghost" 
-            size="icon" 
-            className="h-9 w-9"
+            className="flex items-center gap-2 h-9 px-3"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
-            {theme === "light" ? <SunIcon className="h-4 w-4" /> : <MoonIcon className="h-4 w-4" />}
+            {theme === "light" ? (
+                <SunIcon className="h-4 w-4" />
+            ) : (
+                <MoonIcon className="h-4 w-4" />
+            )}
+            <span className="text-sm">
+                {theme === "light" ? "Light" : "Dark"}
+            </span>
             <span className="sr-only">Toggle theme</span>
         </Button>
     )
